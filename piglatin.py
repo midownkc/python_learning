@@ -9,7 +9,7 @@ def pigler(piglatin):
 
 def pigger(sentence):
     words = sentence.split()
-    output = " "
+    output = ""
     for word in words:
         cry = pigler(word) + " "
         output = str(output) + cry
