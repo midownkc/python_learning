@@ -11,6 +11,7 @@ def print_board(board):
 
 print "Let's play Battleship!"
 print_board(board)
+print "You get 4 chances to guess where my ship is located."
 
 def random_row(board):
     return randint(0, len(board) - 1)
@@ -24,8 +25,6 @@ ship_col = random_col(board)
 #print ship_row
 #print ship_col
 
-# Everything from here on should go in your for loop!
-# Be sure to indent four spaces!
 for turn in range(4):
     print "Turn", turn + 1
 
@@ -36,15 +35,15 @@ for turn in range(4):
         print "Congratulations! You sunk my battleship!"
         break
     else:
-        if (guess_row < 0 or guess_row > 4) or (guess_col < 0 or guess_col > 4):
+        if (guess_row < 0 or guess_row > 5) or (guess_col < 0 or guess_col > 5):
             print "Oops, that's not even in the ocean."
-        elif(board[guess_row][guess_col] == "X"):
+        elif(board[guess_row-1][guess_col-1] == "X"):
             print "You guessed that one already."
         else:
             if turn == 3:
                 print "Game Over"
+                exit(0)
             else:
                 print "You missed my battleship!"
-                board[guess_row][guess_col] = "X"
-    # Print (turn + 1) here!
+                board[guess_row-1][guess_col-1] = "X"
             print_board(board)
