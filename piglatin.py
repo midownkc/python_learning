@@ -31,8 +31,7 @@ def start():
         elif goagain == "3":
             print pigger(raw_input())
         else:
-            print "ninja turds"
-            raw_input()
+            raw_input("Try again")
             start()
     else:
         print "please try again"
